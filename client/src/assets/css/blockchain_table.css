@@ -1,0 +1,268 @@
+h1 {
+  text-align: center;
+  color: #f2f2f2;
+}
+.rw-containter {
+  display: block;
+  text-align: center;
+  background: #beaaff;
+  background: -webkit-linear-gradient(to left, #beaaff, #f0f0f0, #fff);
+  background: linear-gradient(to left, #beaaff, #f0f0f0, #fff);
+  padding: 20px;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+.rwd-table {
+  position: relative;
+  border-collapse: collapse;
+}
+
+.rwd-table tr {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #0000000d;
+  background-color: #ffff;
+  white-space: nowrap;
+  font-size: 0.8em;
+}
+
+.rwd-table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+td a,
+.link {
+  color: #6e9e96;
+  cursor: pointer;
+}
+td a:hover,
+.link:hover {
+  color: #8cfd9b;
+}
+
+.rwd-table {
+  color: #333;
+  overflow: hidden;
+}
+
+.rw-table-item {
+  min-width: 300px;
+  display: flex;
+}
+.rwd-table-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rw-table-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+.rw-table-text h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #a990e3;
+}
+.rw-table-text span {
+  margin: 10px 0;
+  text-align: left;
+  color: grey;
+}
+.rwd-table-div .countStat {
+  display: none;
+}
+.rwd-table-div {
+  box-sizing: border-box;
+  position: relative;
+  background-color: transparent;
+  border-radius: 0.4em;
+  padding: 0;
+  overflow: hidden !important;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.rwd-table-div.proccessing:after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 1px;
+  top: 0;
+  left: 0;
+  background: green;
+  overflow: hidden !important;
+  z-index: 5;
+  -webkit-animation: leftRight 0.8s linear infinite reverse;
+  animation: leftRight 0.8s linear infinite reverse;
+}
+
+.rwd-table th,
+.rwd-table td {
+  text-align: left;
+  padding: 15px 0.5em;
+}
+
+.rm-paginate {
+  flex-wrap: wrap;
+}
+.pagination {
+  flex-wrap: wrap;
+}
+
+@-webkit-keyframes leftRight {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(-100%);
+  }
+  75% {
+    -webkit-transform: translateX(+200%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes leftRight {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  75% {
+    transform: translateX(+200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.rm-paginate {
+  background: #fff;
+  background: #fff;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rwd-table th,
+.rwd-table td {
+  padding: 10px 1em;
+}
+
+.rw-calendar {
+  display: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.react-calendar {
+  width: 290px;
+  max-width: 100%;
+  background: #ffffff61;
+  border: 1px solid transparent;
+  line-height: 0.8em;
+  z-index: 10;
+  padding:10px 1px;
+  transition: all 0.5s ease-in-out;
+}
+.react-calendar:hover {
+  background: white;
+}
+.react-calendar__navigation{
+  margin-bottom:2px;
+}
+
+.react-calendar__tile--active {
+  background: green;
+  color: white;
+}
+.react-calendar__navigation__label__labelText{
+  line-height: 20px!important;
+}
+.rwd-table-wrap {
+  padding: 20px;
+  width: 100%;
+}
+
+.rwd-table-div {
+  width: 100%;
+}
+.rwd-table-main {
+  width: 100%;
+  overflow: auto !important;
+}
+
+@media screen and (max-width: 601px) {
+  .rwd-table tr:nth-child(2) {
+    border-top: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .rwd-table-wrap {
+    padding: 20px 40px;
+  }
+  .rwd-table td:before {
+    display: none;
+  }
+  .rwd-table th,
+  .rwd-table td {
+    display: table-cell;
+    padding: 0.25em 0.5em;
+  }
+  .rwd-table th:first-child,
+  .rwd-table td:first-child {
+    padding-left: 0;
+  }
+  .rwd-table th:last-child,
+  .rwd-table td:last-child {
+    padding-right: 0;
+    text-align: center;
+  }
+  .rwd-table th,
+  .rwd-table td {
+    padding: 0.9em 1.7em !important;
+    font-size: 14px;
+  }
+  .rw-table-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100vh;
+  }
+  .rw-table-container:after {
+    content: " ";
+    width: 20%;
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background: url("../images/wealth_intext.png");
+  }
+  .rwd-table th {
+    padding: 1.3em 1.7em !important;
+    font-size: 14px !important;
+    color: #a990e3;
+  }
+  .rwd-table-div .countStat {
+    display: block;
+    font-size: 12px;
+  }
+  .rw-calendar {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+}

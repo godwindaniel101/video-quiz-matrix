@@ -1,0 +1,21 @@
+.show_preloader {
+  visibility: visible !important;
+  opacity: 1;
+}
+.hide_preloader {
+  visibility: hidden !important;
+  opacity: 0;
+}
+.preloader {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  background: white;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  z-index: 50;
+  align-items: center;
+  justify-content: center;
+  transition: visibility 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}

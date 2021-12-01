@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "803bbeff-002b-4652-a4d6-75896a75aecb",
+		"name": "Quick Backend Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GraphicQl Get Blocks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    blocks(time :\"1573858800000\",page:1 , limit:20) {\r\n        page\r\n        limit\r\n        totalCount\r\n        pageCount\r\n        data {\r\n        block_index\r\n        hash\r\n        height\r\n        time\r\n        }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/v2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"v2"
+					]
+				},
+				"description": "GraphicQL End points to get blockc transactions for a particular time.\r\n\r\nNote all end query params, that is, page, limit and time(in miliseconds) are important"
+			},
+			"response": []
+		},
+		{
+			"name": "GraphicQl Get Block Transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    transactions (transactionId: \"00000000000000000009b6116441a28711e9961cd0c15474e8153c6b1e71e773\" ,page:1 , limit:20) {\r\n        hash\r\n        ver\r\n        prev_block\r\n        mrkl_root\r\n        time\r\n        bits\r\n        next_block\r\n        fee\r\n        nonce\r\n        n_tx\r\n        size\r\n        block_index\r\n        main_chain\r\n        height\r\n        weight\r\n        transactions{\r\n                page\r\n                limit\r\n                totalCount\r\n                pageCount\r\n                data{\r\n                    hash\r\n                    ver\r\n                    vin_sz\r\n                    vout_sz\r\n                    size\r\n                    weight\r\n                    fee\r\n                    relayed_by\r\n                    lock_time\r\n                    tx_index\r\n                    double_spend\r\n                    time\r\n                    block_index\r\n                    block_height\r\n                    out{\r\n                        type\r\n                        spent\r\n                        value\r\n                        n\r\n                        tx_index\r\n                        script\r\n                        addr\r\n                    }\r\n                inputs{\r\n                        sequence\r\n                        witness\r\n                        script\r\n                        index\r\n                }\r\n                }\r\n        }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/v2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"v2"
+					]
+				},
+				"description": "GraphicQL End points to get  transactions for a particular particular block.\r\n\r\nNote all end query params, that is, page, limit and blockhash are important"
+			},
+			"response": []
+		},
+		{
+			"name": "Rest Get Blocks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/api/v1/blockchain/blocks/1600789008000?page=5&limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"v1",
+						"blockchain",
+						"blocks",
+						"1600789008000"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "5"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				},
+				"description": "Endpoint to get all hash for a particular time.\r\n\r\noptioanl parameters inclde\r\npage | default 0\r\nlimit | default 20\r\n\r\nrequired field is the time(in miliseconds)"
+			},
+			"response": []
+		},
+		{
+			"name": "Rest Get Block Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/blockchain/00000000000000000009b6116441a28711e9961cd0c15474e8153c6b1e71e773",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"blockchain",
+						"00000000000000000009b6116441a28711e9961cd0c15474e8153c6b1e71e773"
+					]
+				},
+				"description": "Rest End point to get Transactions attached to a block.\r\noptional parameters allowered are \r\n\r\npage | default 0\r\nlimit | default 20\r\n\r\nmandatory parameter is the blockhash"
+			},
+			"response": []
+		}
+	]
+}

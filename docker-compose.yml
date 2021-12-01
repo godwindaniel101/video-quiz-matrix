@@ -1,19 +1,30 @@
-version: '2.4'
+version: "3.8"
 
 services:
-  app:
+  server:
     build:
-      context: .
-      target: dev
+      dockerfile: Dockerfile
+      context: "./server"
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    ports:
+      - 82:82
+    depends_on:
+      - "iredis"
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - /app/node_modules
+      - ./client:/app
     ports:
       - "8081:8081"
-      - "9229:9229"
-    volumes:
-      - .:/app
-       - /app/node_modules
-  mongo:
-      image: mongo
-      volumes:
-        - ./mongodb/data/db
-      ports:
-        - '27017:27017'
+
+  iredis:
+    container_name: iredis
+    image: redis:latest
+    ports:
+      - 6329:6329

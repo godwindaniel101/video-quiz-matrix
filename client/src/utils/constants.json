@@ -1,0 +1,14 @@
+{
+    "BASE_URL": "",
+    "BACKEND_SERVER_URL": "",
+    "GET_ALL_BLOCKS": "get-all-blocks",
+    "GET_UNIT_BLOCK": "get-unit-block",
+    "API_REQUEST_ERROR": "error-payload",
+    "CLEAR_ERRORS": "clear-error",
+    "PRELOADER": "preloader",
+    "BLOCK_TABLE_PRELOADER": "table-preloader",
+    "TRANSACTION_TABLE_PRELOADER": "table-preloader",
+    "PAGINATION": "pagination",
+    "BASH_TIME": "bash-time",
+    "REDIRECT_URL" : "redirect"
+}
