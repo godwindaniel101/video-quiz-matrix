@@ -13,7 +13,7 @@ import { IError } from "../../interface/IError";
  * @returns
  */
 
-const backend_url: string = process.env.REACT_APP_NOT_SECRET_CODE || "http://localhost:8082/api/v1/";
+const backend_url: string = process.env.REACT_APP_NOT_SECRET_CODE || "http://server:8082/api/v1/";
 
 //gets all blocks
 export const getBlocks =

@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   server:
+    container_name: server
     build:
       dockerfile: Dockerfile
       context: "./server"
@@ -10,8 +11,6 @@ services:
       - ./server:/app
     ports:
       - 8082:8082
-    depends_on:
-      - "vredis"
 
   client:
     build:
