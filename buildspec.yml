@@ -4,24 +4,9 @@ phases:
     install:
         runtime-versions:
             docker: 18
-    # pre_build:
-    #     commands:
-    #     - npm install typescript --g
-    #     - npm ci && npm cache clean --force
-    # build:
-    #     commands:
-    #     - tsc
 artifacts:
     type: zip
     files:
-        - 'server/package.json'
-        - 'server/package-lock.json'
-        - 'server/tsconfig.json'
-        - 'server/dist/dist/**/*'
-        - 'server/Dockerfile'
-        - 'client/package.json'
-        - 'client/package-lock.json'
-        - 'client/tsconfig.json'
-        - 'client/dist/dist/**/*'
-        - 'client/Dockerfile'
+        - 'server/**/*'
+        - 'client/**/*'
         - Dockerrun.aws.json
