@@ -27,4 +27,4 @@ services:
     container_name: vredis
     image: redis:latest
     ports:
-      - 6328:6329
+      - 6329:6329
