@@ -1,7 +1,7 @@
 FROM node:10-alpine as base
 ENV NODE_ENV=production
 
-EXPOSE 80
+EXPOSE 8081
 
 WORKDIR /app
 COPY package*.json ./
@@ -21,4 +21,3 @@ RUN tsc
 FROM base as prod
 COPY --from=build /app/dist/ .
 CMD ["node", "src/index.js"]
-EXPOSE 80

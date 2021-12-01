@@ -24,5 +24,5 @@ import { Member } from "./models/member";
   app.post("/register", register);
   
   console.log("===APPLICATION RUNNING===")
-  app.listen(80);
+  app.listen(8081);
 });

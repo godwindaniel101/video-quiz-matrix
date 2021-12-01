@@ -6,7 +6,7 @@ services:
       context: .
       target: dev
     ports:
-      - "3030:80"
+      - "8081:8081"
       - "9229:9229"
     volumes:
       - .:/app
