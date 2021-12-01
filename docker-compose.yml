@@ -10,6 +10,7 @@ services:
       - "9229:9229"
     volumes:
       - .:/app
+       - /app/node_modules
   mongo:
       image: mongo
       volumes:
