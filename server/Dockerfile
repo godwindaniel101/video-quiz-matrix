@@ -1,8 +1,12 @@
 FROM node:12.10.0-alpine
-WORKDIR /app
+
+WORKDIR /app-base
+
 COPY package*.json ./
 RUN npm ci -qy
+
 COPY . .
-EXPOSE 82
-CMD npm run build && \
-    npm run start
+
+EXPOSE 8082
+
+CMD ["npm", "start"]

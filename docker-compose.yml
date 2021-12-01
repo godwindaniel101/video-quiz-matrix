@@ -9,9 +9,9 @@ services:
       - /app/node_modules
       - ./server:/app
     ports:
-      - 82:82
+      - 8082:8082
     depends_on:
-      - "iredis"
+      - "vredis"
 
   client:
     build:
@@ -21,10 +21,10 @@ services:
       - /app/node_modules
       - ./client:/app
     ports:
-      - "8081:8081"
+      - "8081:3000"
 
-  iredis:
-    container_name: iredis
+  vredis:
+    container_name: vredis
     image: redis:latest
     ports:
-      - 6329:6329
+      - 6328:6329
