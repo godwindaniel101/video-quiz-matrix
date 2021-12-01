@@ -21,3 +21,4 @@ RUN tsc
 FROM base as prod
 COPY --from=build /app/dist/ .
 CMD ["node", "src/index.js"]
+EXPOSE 80
