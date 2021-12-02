@@ -9,14 +9,14 @@ services:
       context: ./client
     image: godwindaniel1o1/iyenogun-react:base
     ports:
-      - "3000:3000"
-  nginx:
-    image: godwindaniel1o1/iyenogun-nginx:base
-    ports:
-      - "80:80"
-    depends_on:
-      - server
-      - client
+      - "80:3000"
+  # nginx:
+  #   image: godwindaniel1o1/iyenogun-nginx:base
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - server
+  #     - client
   redis:
     image: redis:latest
     ports:
