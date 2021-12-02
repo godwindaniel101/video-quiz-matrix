@@ -20,7 +20,17 @@ services:
       - /app/node_modules
       - ./client:/app
     ports:
-      - "80:3000"
+      - "3000:3000"
+
+  nginx: 
+    container_name: nginx
+    depends_on: 
+      - client
+      - server
+    ports: 
+      - "80:80"
+    build:
+      context: ./nginx
 
   vredis:
     container_name: vredis

@@ -1,0 +1,45 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "godwindaniel1o1/iyenogun-react:base",
+      "hostname": "client",
+      "essential": true,
+      "memory": 1024,
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "containerPort": 3000
+        }
+      ]
+    },
+    {
+      "name": "server",
+      "image": "godwindaniel1o1/iyenogun-node:base",
+      "hostname": "server",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 8082,
+          "containerPort": 8082
+        }
+      ]
+    },
+    {
+      "name": "nginx",
+      "image": "godwindaniel1o1/iyenogun-nginx:base",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["server", "client"],
+      "memory": 512
+    }
+  ]
+}
