@@ -6,7 +6,6 @@
       "image": "godwindaniel1o1/iyenogun-react:base",
       "hostname": "client",
       "essential": true,
-      "memory": 512,
       "portMappings": [
         {
           "hostPort": 3000,
@@ -19,7 +18,6 @@
       "image": "godwindaniel1o1/iyenogun-node:base",
       "hostname": "server",
       "essential": true,
-      "memory": 512,
       "portMappings": [
         {
           "hostPort": 8082,
@@ -38,8 +36,7 @@
           "containerPort": 80
         }
       ],
-      "links": ["server", "client"],
-      "memory": 512
+      "links": ["server", "client"]
     }
   ]
 }
