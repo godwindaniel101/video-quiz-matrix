@@ -1,39 +1,31 @@
-version: "3.8"
-
+version: '3.8'
 services:
   server:
-    container_name: server
     build:
-      dockerfile: Dockerfile
-      context: "./server"
-    volumes:
-      - /app/node_modules
-      - ./server:/app
+      context: ./server
+    container_name: server
+    image: godwindaniel1o1/iyenogun-node
     ports:
-      - 8082:8082
-
+      - "8082:8082"
   client:
     build:
       context: ./client
-      dockerfile: Dockerfile
-    volumes:
-      - /app/node_modules
-      - ./client:/app
+    container_name: client
+    image: godwindaniel1o1/iyenogun-react
     ports:
       - "3000:3000"
-
-  nginx: 
-    container_name: nginx
-    depends_on: 
-      - client
-      - server
-    ports: 
-      - "80:80"
+  nginx:
     build:
       context: ./nginx
-
+    container_name: nginx
+    depends_on:
+      - server
+      - client
+    image: godwindaniel1o1/iyenogun-nginx
+    ports:
+      - "80:80"
   vredis:
-    container_name: vredis
+    container_name: redis
     image: redis:latest
     ports:
       - 6329:6329
