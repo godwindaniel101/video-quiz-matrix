@@ -1,19 +1,13 @@
 version: 0.2
+
 phases:
-  install:
-    runtime-versions:
-      docker: latest
-  build:
-    commands:
-      - echo Build started on `date`
-      - echo Building the Docker image...
-      - docker-compose --file=docker-compose-prod.yml build
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker image...
-      - docker-compose --file=docker-compose-prod.yml push
+    install:
+        runtime-versions:
+            docker: 18
 artifacts:
-  files:
-    - 'Dockerrun.aws.json'
-    
+    type: zip
+    files:
+        - 'client/**/*'
+        - 'server/**/*'
+        - 'nginx/**/*'
+        - Dockerrun.aws.json
