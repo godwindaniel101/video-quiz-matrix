@@ -9,5 +9,4 @@ artifacts:
     files:
         - 'client/**/*'
         - 'server/**/*'
-        - 'nginx/**/*'
         - Dockerrun.aws.json
