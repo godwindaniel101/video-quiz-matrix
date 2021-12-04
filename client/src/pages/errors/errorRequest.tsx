@@ -21,7 +21,7 @@ function ErrorRequest() {
           <div className="table-wrap">
             <div className="table-head">
               <div className="rw-table-text">
-                <h3>Oops ! something went wrong</h3>
+                <h3>Oops  o! something went wrong</h3>
                 <span> {error ? error : 'Try again later'}</span>
                 <span className="link" onClick={()=>history.push('/')}>Back to Safety</span>
               </div>
