@@ -1,22 +1,13 @@
 version: '3.8'
 services:
   server:
-    image: godwindaniel1o1/iyenogun-node:base
     ports:
       - "8082:8082"
   client:
     build:
       context: ./client
-    image: godwindaniel1o1/iyenogun-react:base
     ports:
       - "80:3000"
-  # nginx:
-  #   image: godwindaniel1o1/iyenogun-nginx:base
-  #   ports:
-  #     - "80:80"
-  #   depends_on:
-  #     - server
-  #     - client
   redis:
     image: redis:latest
     ports:
